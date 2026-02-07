@@ -1,94 +1,103 @@
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Búsqueda de Cajeros</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Información sobre Repuestos</title>
 
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1540897613821893');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1540897613821893&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;
+n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];
+t=b.createElement(e);t.async=!0;
+t.src='https://connect.facebook.net/en_US/fbevents.js';
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script');
 
-    .container {
-      max-width: 400px;
-      padding: 30px;
-      border-radius: 12px;
-      background-color: #111;
-      box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
-    }
+fbq('init', '1540897613821893');
+fbq('track', 'PageView');
+</script>
 
-    h1 {
-      font-size: 26px;
-      margin-bottom: 20px;
-    }
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1540897613821893&ev=PageView&noscript=1"/>
+</noscript>
 
-    p {
-      font-size: 16px;
-      margin-bottom: 30px;
-      color: #ccc;
-    }
+<style>
+body {
+margin: 0;
+font-family: 'Inter', sans-serif;
+background-color: #000;
+color: #fff;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+text-align: center;
+padding: 20px;
+}
 
-    .btn-wpp {
-      display: inline-block;
-      padding: 15px 25px;
-      background-color: #25D366;
-      color: #000;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
+h1 {
+font-size: 26px;
+margin-bottom: 30px;
+}
 
-    .btn-wpp:hover {
-      background-color: #1ebe5d;
-      transform: scale(1.05);
-    }
-  </style>
+.button {
+background-color: #ffffff;
+color: #000;
+padding: 18px 30px;
+border-radius: 10px;
+font-weight: bold;
+text-decoration: none;
+font-size: 18px;
+border: 2px solid #00c853;
+transition: 0.3s;
+}
+
+.button:hover {
+background-color: #00c853;
+color: #fff;
+box-shadow: 0 0 15px #00c853;
+}
+
+.footer {
+position: fixed;
+bottom: 0;
+width: 100%;
+background-color: #00c853;
+color: #000;
+padding: 12px;
+font-weight: bold;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>¿Querés trabajar desde la comodidad de tu casa?</h1>
-    <p>Sumate a nuestro equipo y empezá hoy mismo.</p>
+<h1>¿Querés más info sobre los repuestos publicados?</h1>
 
-    <a 
-      class="btn-wpp"
-      href="https://wa.me/5492665113500?text=Quiero%20ser%20cajero"
-      target="_blank">
-      Contactar por WhatsApp
-    </a>
-  </div>
+<a class="button"
+href="https://wa.me/5492664701843?text=Quiero%20info%20sobre%20repuestos"
+target="_blank"
+onclick="fbq('trackCustom','ClickWhatsApp')">
+📲 QUIERO INFO SOBRE REPUESTOS
+</a>
+
+<div class="footer">
+Repuestos disponibles — Atención directa por WhatsApp
+</div>
 
 </body>
 </html>
-
