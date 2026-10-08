@@ -1,762 +1,151 @@
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BN Fichas | Plataformas para independientes</title>
-<meta name="description" content="BN Fichas. Información para cajeros y administradores independientes. Multipanel, Bet30, Ganamos y Lemon.">
-
-<!-- PIXEL META -->
-<script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;
-n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];
-t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init','1381019173497631');
-fbq('track','PageView');
-</script>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Rajdhani:wght@600;700&display=swap');
-
-:root{
-  --green:#00ef88;
-  --green-dark:#006e43;
-  --gold:#f5c75c;
-  --white:#f7f8f8;
-  --black:#030806;
-}
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-  color:var(--white);
-  font-family:'Montserrat',sans-serif;
-  background:
-   radial-gradient(ellipse at 50% 5%,#095c38 0%,transparent 42%),
-   radial-gradient(ellipse at 90% 70%,#103522 0%,transparent 40%),
-   #030806;
-  min-height:100vh;
-  overflow-x:hidden;
-}
-
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.14;
-  background-image:
-    linear-gradient(90deg,transparent 98%,#00ed88 99%),
-    linear-gradient(transparent 98%,#00ed88 99%);
-  background-size:72px 72px;
-}
-
-.container{
-  width:min(1120px,92%);
-  margin:auto;
-}
-
-header{
-  text-align:center;
-  padding:35px 15px 15px;
-}
-
-.logo{
-  display:inline-flex;
-  flex-direction:column;
-  align-items:center;
-  filter:drop-shadow(0 0 25px #00874b);
-}
-
-.crown{
-  font-size:48px;
-  color:var(--gold);
-  line-height:1;
-}
-
-.logo-bn{
-  font-family:Georgia,serif;
-  font-weight:900;
-  font-size:clamp(85px,16vw,150px);
-  line-height:.85;
-  background:linear-gradient(180deg,#fff,#b6c3c1 45%,#fff 65%,#7f9c91);
-  background-clip:text;
-  -webkit-background-clip:text;
-  color:transparent;
-  -webkit-text-stroke:1px var(--gold);
-  text-shadow:4px 5px 0 #004327;
-}
-
-.logo-name{
-  font-family:Georgia,serif;
-  font-size:clamp(34px,7vw,63px);
-  font-style:italic;
-  font-weight:bold;
-  color:var(--gold);
-  margin-top:-7px;
-  text-shadow:0 0 20px #00c66d;
-}
-
-.hero{
-  text-align:center;
-  padding:20px 0 45px;
-}
-
-.tag{
-  display:inline-block;
-  color:var(--gold);
-  border:1px solid #9a7632;
-  border-radius:40px;
-  padding:10px 23px;
-  font-size:12px;
-  letter-spacing:2px;
-  font-weight:800;
-  background:#15140c;
-  margin-bottom:20px;
-}
-
-h1{
-  font-family:'Rajdhani',sans-serif;
-  font-size:clamp(45px,8vw,91px);
-  text-transform:uppercase;
-  line-height:.97;
-  margin:10px 0 18px;
-  font-weight:700;
-  text-shadow:0 5px 18px #000;
-}
-
-h1 span{
-  display:block;
-  color:var(--gold);
-}
-
-h1 strong{
-  display:block;
-  color:var(--green);
-  font-size:.8em;
-  text-shadow:0 0 22px #008b51;
-}
-
-.intro{
-  font-size:clamp(15px,2vw,18px);
-  color:#d4e4dc;
-  line-height:1.8;
-  max-width:650px;
-  margin:20px auto 30px;
-}
-
-.primary-btn{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  color:white;
-  background:linear-gradient(135deg,#008447,#00c974);
-  border:2px solid var(--gold);
-  border-radius:100px;
-  padding:18px 35px;
-  font-family:inherit;
-  font-size:16px;
-  font-weight:900;
-  text-decoration:none;
-  cursor:pointer;
-  box-shadow:0 0 20px #00b66a80,inset 0 2px 12px #ffffff30;
-  transition:.25s;
-}
-
-.primary-btn:hover,
-.primary-btn:focus-visible{
-  transform:translateY(-4px) scale(1.035);
-  box-shadow:0 0 35px #00fa91;
-}
-
-.section-title{
-  color:var(--gold);
-  text-align:center;
-  font-size:clamp(25px,4vw,40px);
-  font-weight:900;
-  text-transform:uppercase;
-  margin:20px 0 30px;
-}
-
-.platforms{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-  margin-bottom:65px;
-}
-
-.platform{
-  background:linear-gradient(145deg,#123b2a,#050d09);
-  border:1px solid #b08a40;
-  border-radius:17px;
-  padding:27px 10px;
-  text-align:center;
-  font-size:21px;
-  font-weight:900;
-  box-shadow:0 0 15px #00cb7b22;
-  transition:.3s;
-}
-
-.platform:hover{
-  transform:translateY(-7px);
-  border-color:var(--green);
-  box-shadow:0 0 25px #00dd8770;
-}
-
-.platform span{
-  display:block;
-  font-size:35px;
-  margin-bottom:12px;
-}
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-bottom:65px;
-}
-
-.feature{
-  appearance:none;
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  min-height:185px;
-  border:1px solid #8e763c;
-  border-radius:18px;
-  background:linear-gradient(160deg,#133b2b,#050a08 72%);
-  color:white;
-  padding:23px 15px;
-  font-family:inherit;
-  cursor:pointer;
-  transition:all .25s ease;
-  position:relative;
-  overflow:hidden;
-}
-
-.feature:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg,transparent,#00ed8820,transparent);
-  transform:translateX(-100%);
-  transition:.5s;
-}
-
-.feature:hover:before,
-.feature:focus-visible:before{
-  transform:translateX(100%);
-}
-
-.feature:hover,
-.feature:focus-visible,
-.feature.active{
-  transform:translateY(-4px);
-  border-color:var(--green);
-  box-shadow:0 0 28px #00e68a80;
-  animation:flash .8s ease-in-out;
-}
-
-@keyframes flash{
-  0%,100%{box-shadow:0 0 10px #00ea8850}
-  50%{box-shadow:0 0 38px #00ea88}
-}
-
-.feature-icon{
-  color:var(--gold);
-  font-size:39px;
-  margin-bottom:15px;
-}
-
-.feature-title{
-  font-size:17px;
-  font-weight:900;
-  text-align:center;
-}
-
-.hint{
-  color:#99b9a7;
-  font-size:11px;
-  margin-top:10px;
-}
-
-.answer{
-  display:grid;
-  grid-template-rows:0fr;
-  opacity:0;
-  width:100%;
-  transition:grid-template-rows .3s,opacity .3s;
-}
-
-.answer-inner{
-  overflow:hidden;
-  text-align:center;
-  color:#caffdf;
-  font-size:13px;
-  line-height:1.6;
-}
-
-.feature.active .answer{
-  grid-template-rows:1fr;
-  opacity:1;
-  margin-top:14px;
-}
-
-.feature.active .hint{
-  display:none;
-}
-
-.cta-section{
-  padding:20px 0 65px;
-}
-
-.cta-box{
-  border:2px solid #b59649;
-  background:
-    radial-gradient(ellipse at top,#175b3c,#06120c 65%);
-  border-radius:25px;
-  text-align:center;
-  padding:42px 30px;
-  box-shadow:0 0 35px #00935542;
-}
-
-.cta-box h2{
-  font-size:clamp(25px,5vw,44px);
-  color:var(--gold);
-  margin:0 0 15px;
-}
-
-.cta-box p{
-  line-height:1.7;
-  color:#d7e6df;
-}
-
-.contact-form{
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  max-width:440px;
-  margin:25px auto 0;
-}
-
-.contact-form input{
-  width:100%;
-  padding:19px 22px;
-  border-radius:12px;
-  border:1px solid #b49753;
-  outline:none;
-  font-family:inherit;
-  font-size:16px;
-  color:white;
-  background:#040d09;
-}
-
-.contact-form input:focus{
-  border-color:var(--green);
-  box-shadow:0 0 15px #00f29060;
-}
-
-.contact-form .primary-btn{
-  width:100%;
-}
-
-.whatsapp-floating{
-  position:fixed;
-  left:19px;
-  bottom:23px;
-  width:65px;
-  height:65px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#19bd64;
-  border:2px solid white;
-  border-radius:50%;
-  box-shadow:0 0 23px #00db79;
-  z-index:100;
-  text-decoration:none;
-  transition:.3s;
-  animation:float 2.5s ease-in-out infinite;
-}
-
-.whatsapp-floating:hover{
-  transform:scale(1.12);
-  box-shadow:0 0 40px #00fa80;
-}
-
-.whatsapp-floating svg{
-  width:35px;
-  height:35px;
-  fill:white;
-}
-
-@keyframes float{
-  0%,100%{translate:0 0}
-  50%{translate:0 -6px}
-}
-
-footer{
-  background:#020503;
-  border-top:1px solid #264d37;
-  padding:29px 15px 35px;
-  text-align:center;
-  font-size:12px;
-  color:#93a79a;
-  line-height:1.8;
-}
-
-footer strong{
-  color:var(--gold);
-}
-
-@media(max-width:800px){
-  .platforms{
-    grid-template-columns:repeat(2,1fr);
-  }
-  .features{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:500px){
-  header{padding-top:25px}
-  .hero{padding-bottom:35px}
-  h1{font-size:49px}
-  .platforms{gap:10px}
-  .platform{
-    font-size:16px;
-    padding:21px 7px;
-  }
-  .features{
-    grid-template-columns:1fr;
-    gap:13px;
-  }
-  .feature{min-height:145px}
-  .cta-box{padding:35px 18px}
-  .whatsapp-floating{
-    width:57px;
-    height:57px;
-    left:13px;
-    bottom:16px;
-  }
-}
-
-@media(prefers-reduced-motion:reduce){
-  *,*:before,*:after{
-    animation:none!important;
-    scroll-behavior:auto!important;
-    transition:none!important;
-  }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#06150f" />
+  <meta name="description" content="BN Fichas: información para cajeros y administradores independientes sobre plataformas, precios y soporte." />
+  <title>BN Fichas | Cajeros y administradores independientes</title>
+  <!-- Meta Pixel: se activa al cargar; Contact se registra al tocar un enlace de WhatsApp -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1381019173497631');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1381019173497631&ev=PageView&noscript=1" /></noscript>
+  <style>
+    :root { --bg:#06110d; --panel:#0b1d15; --green:#25f8a2; --gold:#f8ce6a; --text:#f7f7ed; --muted:#b4c9bc; }
+    * {box-sizing:border-box}
+    html {scroll-behavior:smooth}
+    body {margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--text); background:radial-gradient(circle at 50% 6%,#164b32 0,transparent 32%),radial-gradient(circle at 100% 55%,#123623 0,transparent 30%),var(--bg);min-height:100vh}
+    a {color:inherit}
+    .wrap {max-width:1100px;margin:auto;padding:0 20px}
+    header {padding:22px 0;border-bottom:1px solid #e4c67f35;background:#06110dc9;backdrop-filter:blur(12px)}
+    .header-inner {display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .logo {display:flex;align-items:center;gap:10px;font-weight:1000;letter-spacing:.06em;font-size:clamp(21px,4vw,29px)}
+    .logo-symbol {width:42px;height:42px;display:grid;place-items:center;background:linear-gradient(140deg,#ffedb0,#b87917);color:#092014;border-radius:12px;box-shadow:0 0 25px #ffc9573d;font-weight:1000}
+    .logo span span {color:var(--gold)}
+    .header-link {font-size:13px;text-decoration:none;color:var(--gold);border:1px solid #ebcc7770;padding:10px 13px;border-radius:999px}
+    main {overflow:hidden}
+    .hero {text-align:center;padding:75px 0 38px;position:relative}
+    .hero::before {content:'♠  ♦  777  ♣';position:absolute;top:15px;left:0;right:0;font-size:clamp(27px,8vw,65px);letter-spacing:clamp(8px,3vw,25px);color:#fbd06d15;pointer-events:none}
+    .eyebrow {display:inline-block;border:1px solid #ffd77f78;border-radius:999px;background:#211e10a6;color:var(--gold);font-size:12px;font-weight:850;letter-spacing:.16em;padding:9px 16px;text-transform:uppercase}
+    h1 {font-size:clamp(38px,7.2vw,79px);line-height:1.05;margin:21px auto 16px;max-width:980px;letter-spacing:-.045em;text-transform:uppercase;text-shadow:0 5px 20px #0009}
+    h1 .gold {display:block;color:var(--gold);text-shadow:0 3px 25px #e8ac4255}
+    h1 .green {display:block;color:var(--green);font-size:.67em;letter-spacing:.015em;text-shadow:0 0 32px #25f8a26b}
+    .sub {max-width:650px;margin:0 auto 27px;color:var(--muted);font-size:clamp(16px,2vw,20px);line-height:1.55}
+    .platforms {margin:25px auto 0;background:linear-gradient(115deg,#10271c,#08150f);border:1px solid #20d38b70;border-radius:22px;padding:23px;box-shadow:0 0 35px #00ff8c18}
+    .section-label {color:var(--gold);text-align:center;text-transform:uppercase;font-size:13px;font-weight:900;letter-spacing:.12em;margin-bottom:15px}
+    .platform-list {display:flex;justify-content:center;flex-wrap:wrap;gap:11px}
+    .pill {background:#05150e;border:1px solid #e6c26e77;border-radius:13px;padding:12px 20px;font-size:clamp(15px,2.5vw,19px);font-weight:850}
+    .features {padding:46px 0 26px}
+    h2 {margin:0 0 9px;text-align:center;font-size:clamp(25px,4vw,38px)}
+    .features-note {color:var(--muted);text-align:center;margin:0 0 24px}
+    .feature-grid {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
+    .feature {appearance:none;width:100%;min-height:160px;padding:21px 12px;background:linear-gradient(155deg,#112b1d,#07130e);border:1px solid #bd9b50a6;border-radius:18px;color:var(--text);font:inherit;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px}
+    .feature:hover,.feature:focus-visible,.feature.active {transform:translateY(-5px);box-shadow:0 0 0 2px #25f8a23b,0 0 30px #21f89b50;border-color:var(--green);outline:none;animation:pulse .8s ease-in-out infinite alternate}
+    @keyframes pulse {from{filter:brightness(1)}to{filter:brightness(1.2)}}
+    .feature .ico {font-size:33px;line-height:1.1;color:var(--gold)}
+    .feature strong {font-size:15px;line-height:1.3}
+    .feature small {color:var(--green);font-size:11px}
+    .answer {margin:17px 0 0;min-height:84px;padding:19px 21px;background:#092518;border-left:4px solid var(--green);border-radius:12px;line-height:1.55;color:#e8f8eb;box-shadow:0 0 18px #0003}
+    .answer[hidden] {display:none}
+    .cta-section {margin:38px auto 82px;max-width:660px;text-align:center;background:linear-gradient(145deg,#173522,#081911);border:1px solid #ebc77477;padding:33px 22px;border-radius:24px;box-shadow:0 18px 60px #0006}
+    .cta-section p {color:var(--muted);line-height:1.6}
+    label {display:block;text-align:left;font-weight:750;font-size:14px;margin:20px 0 8px}
+    input {width:100%;height:52px;padding:13px 15px;font-size:17px;border-radius:12px;background:#f8fff9;border:2px solid transparent;color:#14251b}
+    input:focus {outline:none;border-color:var(--green);box-shadow:0 0 0 3px #25f8a247}
+    .main-btn {margin-top:15px;width:100%;padding:16px;border:none;border-radius:13px;background:linear-gradient(110deg,#04a75f,#29e894);color:#052012;font-weight:1000;font-size:17px;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 30px #21d47867;transition:transform .2s,filter .2s}
+    .main-btn:hover,.main-btn:focus-visible {transform:translateY(-3px);filter:brightness(1.13)}
+    .disclaimer {font-size:12px!important;color:#a7bbad!important;margin-bottom:0}
+    footer {text-align:center;padding:24px 10px;color:#b1c6b6;border-top:1px solid #f6d58324;font-size:13px}
+    .wa-float {position:fixed;bottom:20px;left:20px;width:64px;height:64px;background:#25d366;border:3px solid #fff;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 30px #0009;z-index:100;transition:transform .2s;animation:float 2s infinite alternate}
+    .wa-float svg {width:35px;height:35px;fill:white}
+    .wa-float:hover,.wa-float:focus-visible {transform:scale(1.1);animation:none}
+    @keyframes float {to {box-shadow:0 0 0 9px #25d36622,0 8px 30px #0008}}
+    @media(max-width:820px){.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.feature:last-child{grid-column:1/-1}.hero{padding-top:55px}}
+    @media(max-width:420px){.feature-grid{gap:9px}.feature{min-height:142px}.header-link{font-size:11px}.pill{padding:11px 13px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  </style>
 </head>
-
 <body>
-
-<header>
-  <div class="logo" aria-label="BN Fichas">
-    <div class="crown">♛</div>
-    <div class="logo-bn">BN</div>
-    <div class="logo-name">Fichas</div>
-  </div>
-</header>
-
-<main class="container">
-
-<section class="hero">
-  <div class="tag">PLATAFORMAS PARA INDEPENDIENTES</div>
-
-  <h1>
-    BUSCAMOS
-    <span>CAJEROS Y</span>
-    <span>ADMINISTRADORES</span>
-    <strong>INDEPENDIENTES</strong>
-  </h1>
-
-  <p class="intro">
-    Descubrí nuestras plataformas, conocé sus
-    características y consultanos cómo trabajar
-    de forma independiente con BN Fichas.
-  </p>
-
-  <a href="#contacto" class="primary-btn">
-    ✦ QUIERO SER INDEPENDIENTE
+  <header><div class="wrap header-inner">
+    <div class="logo" aria-label="BN Fichas"><div class="logo-symbol">BN</div><span>BN <span>FICHAS</span></span></div>
+    <a class="header-link" href="#contacto">CONSULTAR AHORA ↗</a>
+  </div></header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="eyebrow">✦ Nuevas oportunidades ✦</div>
+      <h1 id="titulo">Buscamos <span class="gold">cajeros y administradores</span><span class="green">independientes</span></h1>
+      <p class="sub">Conocé nuestras opciones de plataformas y trabajá de manera independiente.</p>
+      <div class="platforms">
+        <div class="section-label">♛ Plataformas disponibles</div>
+        <div class="platform-list"><span class="pill">Multipanel</span><span class="pill">Bet30</span><span class="pill">Ganamos</span><span class="pill">Lemon</span></div>
+      </div>
+    </section>
+    <section class="features" aria-labelledby="beneficios">
+      <h2 id="beneficios">¿Qué ofrecemos?</h2>
+      <p class="features-note">Tocá cada tarjeta para conocer más ↓</p>
+      <div class="feature-grid">
+        <button class="feature" type="button" aria-expanded="false" data-answer="El RTP es el porcentaje teórico de retorno al jugador. En las plataformas que habiliten esta función, su configuración puede modificarse dentro de los parámetros permitidos y según sus condiciones."><span class="ico" aria-hidden="true">⚙</span><strong>RTP regulable</strong><small>TOCÁ PARA VER +</small></button>
+        <button class="feature" type="button" aria-expanded="false" data-answer="Tenemos excelentes precios competitivos para que puedas consultar la opción que mejor se adapte a tu actividad."><span class="ico" aria-hidden="true">🪙</span><strong>Excelentes precios</strong><small>TOCÁ PARA VER +</small></button>
+        <button class="feature" type="button" aria-expanded="false" data-answer="¿Estás cansado de vivir para tus administradores? Tenemos una solución para que consultes cómo trabajar de manera independiente."><span class="ico" aria-hidden="true">♛</span><strong>Ideal para independientes</strong><small>TOCÁ PARA VER +</small></button>
+        <button class="feature" type="button" aria-expanded="false" data-answer="Te brindamos un canal de imágenes con material publicitario para compartir en tus redes y estados."><span class="ico" aria-hidden="true">📣</span><strong>Material publicitario</strong><small>TOCÁ PARA VER +</small></button>
+        <button class="feature" type="button" aria-expanded="false" data-answer="Todas las plataformas cuentan con su soporte técnico para consultas relacionadas con su funcionamiento."><span class="ico" aria-hidden="true">🎧</span><strong>Atención y soporte</strong><small>TOCÁ PARA VER +</small></button>
+      </div>
+      <div id="respuesta" class="answer" role="status" aria-live="polite" hidden></div>
+    </section>
+    <section id="contacto" class="cta-section" aria-labelledby="contacto-titulo">
+      <div class="section-label">✦ Consultanos sin compromiso ✦</div>
+      <h2 id="contacto-titulo">¿Querés ser independiente?</h2>
+      <p>Escribí tu nombre y abrí una conversación directa por WhatsApp para pedir información.</p>
+      <form id="contact-form">
+        <label for="nombre">Tu nombre</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Ej.: Brenda" autocomplete="given-name" minlength="2" maxlength="60" required />
+        <button class="main-btn" type="submit">✆ Quiero información por WhatsApp</button>
+      </form>
+      <p class="disclaimer">Al continuar, se abrirá WhatsApp con el mensaje preparado. Vas a poder revisarlo antes de enviarlo. Solo para mayores de 18 años.</p>
+    </section>
+  </main>
+  <footer>BN Fichas · Información para mayores de 18 años · Consultá la disponibilidad y condiciones de cada plataforma.</footer>
+  <a id="wa-float" class="wa-float" href="https://wa.me/5492664367922?text=Quiero%20ser%20independiente%2C%20%C2%BFme%20pas%C3%A1s%20info%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp" title="Consultar por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 .8A15.1 15.1 0 0 0 3.1 23.7L.9 31l7.6-2A15.2 15.2 0 1 0 16 .8Zm0 27.6a12.4 12.4 0 0 1-6.3-1.7l-.5-.3-4.5 1.2 1.2-4.4-.3-.5a12.4 12.4 0 1 1 10.4 5.7Zm6.8-9.3c-.4-.2-2.2-1.1-2.6-1.2s-.6-.2-.9.2-1 1.2-1.2 1.4-.4.3-.8.1a10.1 10.1 0 0 1-3-1.9 11.3 11.3 0 0 1-2-2.5c-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2.1-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.8.1-1.2.6S8.8 11 8.8 12.8s1.3 3.5 1.5 3.8 2.6 4 6.4 5.6c.9.4 1.6.6 2.1.8.9.3 1.7.2 2.4.1.7-.1 2.2-.9 2.5-1.7.3-.8.3-1.5.2-1.7-.1-.2-.3-.3-.7-.5Z"/></svg>
   </a>
-</section>
-
-<section>
-  <h2 class="section-title">Nuestras plataformas</h2>
-
-  <div class="platforms">
-    <div class="platform">
-      <span>♛</span>
-      Ganamos Net
-    </div>
-
-    <div class="platform">
-      <span>✦</span>
-      Bet30 AI
-    </div>
-
-    <div class="platform">
-      <span>🍋</span>
-      Lemon
-    </div>
-
-    <div class="platform">
-      <span>▣</span>
-      Multipanel
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2 class="section-title">
-    Conocé nuestros beneficios
-  </h2>
-
-  <p style="text-align:center;color:#a8c4b4;margin-bottom:28px">
-    Tocá cada tarjeta para descubrir más información.
-  </p>
-
-  <div class="features">
-
-    <button class="feature"
-      type="button" aria-expanded="false">
-      <span class="feature-icon">⚙</span>
-      <span class="feature-title">RTP REGULABLE</span>
-      <span class="hint">✦ Tocá para descubrir</span>
-      <span class="answer">
-        <span class="answer-inner">
-          Las plataformas que disponen de esta
-          función permiten modificar la configuración
-          del RTP según las opciones habilitadas.
-          Consultanos los detalles.
-        </span>
-      </span>
-    </button>
-
-    <button class="feature"
-      type="button" aria-expanded="false">
-      <span class="feature-icon">✦</span>
-      <span class="feature-title">EXCELENTES PRECIOS</span>
-      <span class="hint">✦ Tocá para descubrir</span>
-      <span class="answer">
-        <span class="answer-inner">
-          Tenemos precios muy competitivos.
-          Consultanos nuestra lista de precios
-          y las opciones disponibles.
-        </span>
-      </span>
-    </button>
-
-    <button class="feature"
-      type="button" aria-expanded="false">
-      <span class="feature-icon">♛</span>
-      <span class="feature-title">IDEAL PARA INDEPENDIENTES</span>
-      <span class="hint">✦ Tocá para descubrir</span>
-      <span class="answer">
-        <span class="answer-inner">
-          ¿Estás cansado de depender de tus
-          administradores? Conocé nuestras opciones
-          para trabajar de forma independiente.
-        </span>
-      </span>
-    </button>
-
-    <button class="feature"
-      type="button" aria-expanded="false">
-      <span class="feature-icon">📣</span>
-      <span class="feature-title">MATERIAL PUBLICITARIO</span>
-      <span class="hint">✦ Tocá para descubrir</span>
-      <span class="answer">
-        <span class="answer-inner">
-          Brindamos un canal de imágenes con
-          material publicitario para compartir
-          en redes sociales y estados de WhatsApp.
-        </span>
-      </span>
-    </button>
-
-    <button class="feature"
-      type="button" aria-expanded="false">
-      <span class="feature-icon">🎧</span>
-      <span class="feature-title">ATENCIÓN Y SOPORTE</span>
-      <span class="hint">✦ Tocá para descubrir</span>
-      <span class="answer">
-        <span class="answer-inner">
-          Todas las plataformas cuentan con
-          su soporte técnico para consultas
-          y asistencia.
-        </span>
-      </span>
-    </button>
-
-    <button class="feature"
-      type="button" aria-expanded="false">
-      <span class="feature-icon">💬</span>
-      <span class="feature-title">INFORMACIÓN PERSONALIZADA</span>
-      <span class="hint">✦ Tocá para descubrir</span>
-      <span class="answer">
-        <span class="answer-inner">
-          Tu consulta no molesta.
-          Escribinos para conocer las condiciones
-          y las plataformas disponibles.
-        </span>
-      </span>
-    </button>
-
-  </div>
-</section>
-
-<section class="cta-section" id="contacto">
-  <div class="cta-box">
-
-    <h2>¿QUERÉS SER INDEPENDIENTE?</h2>
-
-    <p>
-      Estás a un mensaje de conocer nuestras opciones.
-      Ingresá tu nombre y comunicate directamente
-      con BN Fichas por WhatsApp.
-    </p>
-
-    <form id="contactForm" class="contact-form">
-      <input
-        type="text"
-        id="nombre"
-        placeholder="Escribí tu nombre..."
-        maxlength="70"
-        autocomplete="given-name"
-        required
-      >
-
-      <button class="primary-btn" type="submit">
-        💬 ENVIAR CONSULTA POR WHATSAPP
-      </button>
-    </form>
-
-    <p style="font-size:12px;color:#a5bfb0">
-      Se abrirá WhatsApp con tu mensaje preparado.
-      Solo tendrás que enviarlo.
-    </p>
-
-  </div>
-</section>
-
-</main>
-
-<!-- WHATSAPP FLOTANTE -->
-<a
-  class="whatsapp-floating"
-  id="floatingWhatsApp"
-  href="https://wa.me/5492664367922?text=Quiero%20ser%20independiente%2C%20%C2%BFme%20pas%C3%A1s%20info%3F"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Consultar por WhatsApp"
-  title="Hablá con BN Fichas"
->
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16 .8A15.1 15.1 0 0 0 2.9 23.5L.8 31l7.7-2A15.2 15.2 0 1 0 16 .8zm0 27.7a12.4 12.4 0 0 1-6.3-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.5 12.5 0 1 1 16 28.5zm6.8-9.3c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.4-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.3 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.5 1.5 3.8c.2.2 2.5 3.9 6.1 5.4.9.4 1.6.6 2.1.8.9.3 1.7.2 2.4.2.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5z"/>
-  </svg>
-</a>
-
-<footer>
-  <strong>BN FICHAS</strong>
-  <p>
-    Información para cajeros y administradores independientes.
-  </p>
-  <p>
-    Exclusivo para mayores de 18 años.
-    Sujeto a las autorizaciones y normativas aplicables.
-  </p>
-  © BN Fichas
-</footer>
-
-<script>
-const WHATSAPP_NUMBER = "5492664367922";
-
-function whatsappLink(nombre = "") {
-  const texto = nombre
-    ? `Hola, soy ${nombre}. Quiero ser independiente, ¿me pasás info?`
-    : "Quiero ser independiente, ¿me pasás info?";
-
-  return "https://wa.me/" + WHATSAPP_NUMBER +
-    "?text=" + encodeURIComponent(texto);
-}
-
-function trackContact() {
-  if (typeof fbq === "function") {
-    fbq("track", "Contact");
-  }
-}
-
-// Tarjetas interactivas
-document.querySelectorAll(".feature").forEach(card => {
-  card.addEventListener("click", () => {
-    const abierta = card.classList.contains("active");
-
-    document.querySelectorAll(".feature").forEach(c => {
-      c.classList.remove("active");
-      c.setAttribute("aria-expanded", "false");
+  <script>
+    const PHONE = '5492664367922';
+    const MESSAGE = 'Quiero ser independiente, ¿me pasás info?';
+    const answerBox = document.getElementById('respuesta');
+    document.querySelectorAll('.feature').forEach(button => {
+      button.addEventListener('click', () => {
+        const wasOpen = button.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.feature').forEach(item => {
+          item.classList.remove('active'); item.setAttribute('aria-expanded', 'false');
+        });
+        if (wasOpen) { answerBox.hidden = true; answerBox.textContent = ''; return; }
+        button.classList.add('active'); button.setAttribute('aria-expanded', 'true');
+        answerBox.textContent = button.dataset.answer; answerBox.hidden = false;
+        if (window.innerWidth < 700) answerBox.scrollIntoView({behavior:'smooth',block:'nearest'});
+      });
     });
-
-    if (!abierta) {
-      card.classList.add("active");
-      card.setAttribute("aria-expanded", "true");
-    }
-  });
-});
-
-// Formulario con nombre
-document.getElementById("contactForm")
-  .addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const nombre = document
-      .getElementById("nombre")
-      .value.trim();
-
-    if (!nombre) {
-      document.getElementById("nombre").focus();
-      return;
-    }
-
-    trackContact();
-
-    const enlace = whatsappLink(nombre);
-    const ventana = window.open(enlace, "_blank", "noopener");
-
-    if (!ventana) {
-      window.location.href = enlace;
-    }
-  });
-
-// Botón WhatsApp flotante
-document.getElementById("floatingWhatsApp")
-  .addEventListener("click", function() {
-    trackContact();
-  });
-</script>
-
+    function recordContact() { if (typeof fbq === 'function') fbq('track', 'Contact'); }
+    document.getElementById('contact-form').addEventListener('submit', event => {
+      event.preventDefault();
+      const input = document.getElementById('nombre');
+      if (!input.reportValidity()) return;
+      const name = input.value.trim();
+      if (name.length < 2) { input.setCustomValidity('Ingresá al menos dos letras.'); input.reportValidity(); return; }
+      input.setCustomValidity('');
+      const text = `Hola, soy ${name}. ${MESSAGE}`;
+      recordContact();
+      window.location.href = `https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`;
+    });
+    document.getElementById('nombre').addEventListener('input', e => e.target.setCustomValidity(''));
+    document.getElementById('wa-float').addEventListener('click', recordContact);
+  </script>
 </body>
 </html>
