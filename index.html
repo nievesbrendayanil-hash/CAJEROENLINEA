@@ -1,1526 +1,762 @@
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BN Fichas | Plataformas para independientes</title>
+<meta name="description" content="BN Fichas. Información para cajeros y administradores independientes. Multipanel, Bet30, Ganamos y Lemon.">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<meta
-name="theme-color"
-content="#050807">
-
-<title>Grupo MyB | Cajeros para plataformas online</title>
-
-<meta
-name="description"
-content="Grupo MyB incorpora cajeros y cajeras para plataformas online. Conocé la modalidad, requisitos y funcionamiento.">
-
-
-<!-- =========================================
-META PIXEL
-ID: 1381019173497631
-========================================= -->
-
+<!-- PIXEL META -->
 <script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;
+n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];
+t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 
-!function(f,b,e,v,n,t,s)
-{
-    if(f.fbq)return;
-
-    n=f.fbq=function()
-    {
-        n.callMethod ?
-        n.callMethod.apply(n,arguments) :
-        n.queue.push(arguments);
-    };
-
-    if(!f._fbq)f._fbq=n;
-
-    n.push=n;
-    n.loaded=!0;
-    n.version='2.0';
-    n.queue=[];
-
-    t=b.createElement(e);
-    t.async=!0;
-    t.src=v;
-
-    s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s);
-
-}
-(
-    window,
-    document,
-    'script',
-    'https://connect.facebook.net/en_US/fbevents.js'
-);
-
-fbq(
-    'init',
-    '1381019173497631'
-);
-
-fbq(
-    'track',
-    'PageView'
-);
-
+fbq('init','1381019173497631');
+fbq('track','PageView');
 </script>
 
-
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Rajdhani:wght@600;700&display=swap');
 
 :root{
-
-    --verde:#24e77e;
-    --verde2:#069652;
-    --dorado:#ffd36a;
-    --violeta:#9d65ff;
-    --azul:#38a9ff;
-
-    --fondo:#030504;
-    --fondo2:#07120d;
-
-    --blanco:#ffffff;
-    --gris:#b8c5bd;
-    --gris2:#829087;
-
+  --green:#00ef88;
+  --green-dark:#006e43;
+  --gold:#f5c75c;
+  --white:#f7f8f8;
+  --black:#030806;
 }
 
 *{
-
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-
+  box-sizing:border-box;
 }
 
 html{
-
-    scroll-behavior:smooth;
-
+  scroll-behavior:smooth;
 }
 
 body{
-
-    margin:0;
-
-    min-height:100vh;
-
-    font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-    color:white;
-
-    overflow-x:hidden;
-
-    background:
-
-    radial-gradient(
-        circle at 12% 10%,
-        rgba(36,231,126,.17),
-        transparent 28%
-    ),
-
-    radial-gradient(
-        circle at 90% 28%,
-        rgba(157,101,255,.17),
-        transparent 30%
-    ),
-
-    radial-gradient(
-        circle at 50% 90%,
-        rgba(56,169,255,.08),
-        transparent 32%
-    ),
-
-    linear-gradient(
-        160deg,
-        #020403,
-        #07110d 55%,
-        #080510
-    );
-
+  margin:0;
+  color:var(--white);
+  font-family:'Montserrat',sans-serif;
+  background:
+   radial-gradient(ellipse at 50% 5%,#095c38 0%,transparent 42%),
+   radial-gradient(ellipse at 90% 70%,#103522 0%,transparent 40%),
+   #030806;
+  min-height:100vh;
+  overflow-x:hidden;
 }
 
-body::before{
-
-    content:"♠   ♦   ♣   ♥   777";
-
-    position:fixed;
-
-    z-index:-1;
-
-    left:50%;
-    top:20%;
-
-    transform:
-    translateX(-50%)
-    rotate(-8deg);
-
-    white-space:nowrap;
-
-    font-size:
-    clamp(
-        70px,
-        14vw,
-        180px
-    );
-
-    font-weight:bold;
-
-    letter-spacing:20px;
-
-    color:white;
-
-    opacity:.025;
-
-    pointer-events:none;
-
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.14;
+  background-image:
+    linear-gradient(90deg,transparent 98%,#00ed88 99%),
+    linear-gradient(transparent 98%,#00ed88 99%);
+  background-size:72px 72px;
 }
 
 .container{
-
-    width:92%;
-
-    max-width:1080px;
-
-    margin:auto;
-
-}
-
-.card{
-
-    border:
-    1px solid
-    rgba(255,255,255,.11);
-
-    background:
-    rgba(255,255,255,.045);
-
-    border-radius:24px;
-
-    box-shadow:
-    0 20px
-    50px
-    rgba(0,0,0,.30);
-
+  width:min(1120px,92%);
+  margin:auto;
 }
 
 header{
-
-    text-align:center;
-
-    padding:
-    28px
-    15px
-    20px;
-
-}
-
-.logo-box{
-
-    display:inline-flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
+  text-align:center;
+  padding:35px 15px 15px;
 }
 
 .logo{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  filter:drop-shadow(0 0 25px #00874b);
+}
 
-    width:76px;
+.crown{
+  font-size:48px;
+  color:var(--gold);
+  line-height:1;
+}
 
-    height:76px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:22px;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #fff1b8,
-        var(--dorado),
-        #b17a15
-    );
-
-    color:#111;
-
-    font-size:24px;
-
-    font-weight:900;
-
-    box-shadow:
-    0 0 28px
-    rgba(255,211,106,.28);
-
+.logo-bn{
+  font-family:Georgia,serif;
+  font-weight:900;
+  font-size:clamp(85px,16vw,150px);
+  line-height:.85;
+  background:linear-gradient(180deg,#fff,#b6c3c1 45%,#fff 65%,#7f9c91);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+  -webkit-text-stroke:1px var(--gold);
+  text-shadow:4px 5px 0 #004327;
 }
 
 .logo-name{
-
-    margin-top:12px;
-
-    font-size:22px;
-
-    font-weight:900;
-
-    letter-spacing:2px;
-
-}
-
-.logo-subtitle{
-
-    margin-top:5px;
-
-    font-size:11px;
-
-    color:#91a098;
-
-    letter-spacing:2px;
-
+  font-family:Georgia,serif;
+  font-size:clamp(34px,7vw,63px);
+  font-style:italic;
+  font-weight:bold;
+  color:var(--gold);
+  margin-top:-7px;
+  text-shadow:0 0 20px #00c66d;
 }
 
 .hero{
-
-    position:relative;
-
-    overflow:hidden;
-
-    text-align:center;
-
-    padding:
-    60px
-    24px;
-
-    margin-top:10px;
-
+  text-align:center;
+  padding:20px 0 45px;
 }
 
-.hero::after{
-
-    content:"777";
-
-    position:absolute;
-
-    right:-15px;
-
-    top:10px;
-
-    font-size:140px;
-
-    font-weight:900;
-
-    color:white;
-
-    opacity:.025;
-
+.tag{
+  display:inline-block;
+  color:var(--gold);
+  border:1px solid #9a7632;
+  border-radius:40px;
+  padding:10px 23px;
+  font-size:12px;
+  letter-spacing:2px;
+  font-weight:800;
+  background:#15140c;
+  margin-bottom:20px;
 }
 
-.badge{
-
-    display:inline-block;
-
-    margin-bottom:20px;
-
-    padding:
-    9px
-    15px;
-
-    border-radius:50px;
-
-    font-size:12px;
-
-    font-weight:bold;
-
-    letter-spacing:1.5px;
-
-    color:var(--dorado);
-
-    background:
-    rgba(255,211,106,.07);
-
-    border:
-    1px solid
-    rgba(255,211,106,.25);
-
+h1{
+  font-family:'Rajdhani',sans-serif;
+  font-size:clamp(45px,8vw,91px);
+  text-transform:uppercase;
+  line-height:.97;
+  margin:10px 0 18px;
+  font-weight:700;
+  text-shadow:0 5px 18px #000;
 }
 
-.hero h1{
-
-    position:relative;
-
-    z-index:2;
-
-    max-width:850px;
-
-    margin:auto;
-
-    font-size:
-    clamp(
-        42px,
-        8vw,
-        76px
-    );
-
-    line-height:.95;
-
-    letter-spacing:-3px;
-
+h1 span{
+  display:block;
+  color:var(--gold);
 }
 
-.hero h1 span{
-
-    color:var(--verde);
-
+h1 strong{
+  display:block;
+  color:var(--green);
+  font-size:.8em;
+  text-shadow:0 0 22px #008b51;
 }
 
-.hero-text{
-
-    position:relative;
-
-    z-index:2;
-
-    max-width:720px;
-
-    margin:
-    24px auto
-    0;
-
-    color:#c4d1c9;
-
-    font-size:
-    clamp(
-        16px,
-        2.5vw,
-        18px
-    );
-
-    line-height:1.65;
-
+.intro{
+  font-size:clamp(15px,2vw,18px);
+  color:#d4e4dc;
+  line-height:1.8;
+  max-width:650px;
+  margin:20px auto 30px;
 }
 
-.tags{
-
-    position:relative;
-
-    z-index:2;
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:8px;
-
-    margin-top:25px;
-
+.primary-btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  color:white;
+  background:linear-gradient(135deg,#008447,#00c974);
+  border:2px solid var(--gold);
+  border-radius:100px;
+  padding:18px 35px;
+  font-family:inherit;
+  font-size:16px;
+  font-weight:900;
+  text-decoration:none;
+  cursor:pointer;
+  box-shadow:0 0 20px #00b66a80,inset 0 2px 12px #ffffff30;
+  transition:.25s;
 }
 
-.tags span{
-
-    padding:
-    8px
-    14px;
-
-    border-radius:40px;
-
-    background:
-    rgba(255,255,255,.05);
-
-    border:
-    1px solid
-    rgba(255,255,255,.09);
-
-    color:#d9e5dd;
-
-    font-size:12px;
-
-}
-
-.form-box{
-
-    position:relative;
-
-    z-index:2;
-
-    max-width:630px;
-
-    margin:
-    35px auto
-    0;
-
-    padding:24px;
-
-    border-radius:22px;
-
-    background:
-    rgba(0,0,0,.28);
-
-    border:
-    1px solid
-    rgba(36,231,126,.18);
-
-}
-
-.form-box label{
-
-    display:block;
-
-    text-align:left;
-
-    font-size:14px;
-
-    font-weight:bold;
-
-    margin-bottom:8px;
-
-}
-
-.form-box input{
-
-    width:100%;
-
-    height:58px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.14);
-
-    border-radius:15px;
-
-    outline:none;
-
-    color:white;
-
-    background:
-    rgba(0,0,0,.48);
-
-    padding:
-    0
-    18px;
-
-    font-size:16px;
-
-}
-
-.form-box input:focus{
-
-    border-color:var(--verde);
-
-    box-shadow:
-    0 0 0
-    3px
-    rgba(36,231,126,.10);
-
-}
-
-.form-box input::placeholder{
-
-    color:#758079;
-
-}
-
-.cta{
-
-    width:100%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    min-height:62px;
-
-    margin-top:14px;
-
-    padding:
-    14px
-    18px;
-
-    border:0;
-
-    border-radius:17px;
-
-    color:white;
-
-    font-size:
-    clamp(
-        15px,
-        2.8vw,
-        18px
-    );
-
-    font-weight:900;
-
-    cursor:pointer;
-
-    text-decoration:none;
-
-    background:
-
-    linear-gradient(
-        120deg,
-        #079653,
-        #22df7d,
-        #159de7
-    );
-
-    box-shadow:
-    0 12px
-    35px
-    rgba(0,210,110,.25);
-
-}
-
-.cta:hover{
-
-    filter:brightness(1.07);
-
-}
-
-.small-info{
-
-    margin-top:12px;
-
-    color:#849189;
-
-    font-size:12px;
-
-    line-height:1.5;
-
-}
-
-.section{
-
-    margin-top:30px;
-
+.primary-btn:hover,
+.primary-btn:focus-visible{
+  transform:translateY(-4px) scale(1.035);
+  box-shadow:0 0 35px #00fa91;
 }
 
 .section-title{
-
-    text-align:center;
-
-    margin-bottom:22px;
-
+  color:var(--gold);
+  text-align:center;
+  font-size:clamp(25px,4vw,40px);
+  font-weight:900;
+  text-transform:uppercase;
+  margin:20px 0 30px;
 }
 
-.section-title small{
-
-    display:block;
-
-    color:var(--dorado);
-
-    font-weight:bold;
-
-    letter-spacing:2px;
-
-    margin-bottom:8px;
-
+.platforms{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-bottom:65px;
 }
 
-.section-title h2{
+.platform{
+  background:linear-gradient(145deg,#123b2a,#050d09);
+  border:1px solid #b08a40;
+  border-radius:17px;
+  padding:27px 10px;
+  text-align:center;
+  font-size:21px;
+  font-weight:900;
+  box-shadow:0 0 15px #00cb7b22;
+  transition:.3s;
+}
 
-    font-size:
-    clamp(
-        32px,
-        6vw,
-        50px
-    );
+.platform:hover{
+  transform:translateY(-7px);
+  border-color:var(--green);
+  box-shadow:0 0 25px #00dd8770;
+}
 
-    letter-spacing:-2px;
-
+.platform span{
+  display:block;
+  font-size:35px;
+  margin-bottom:12px;
 }
 
 .features{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:15px;
-
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-bottom:65px;
 }
 
 .feature{
+  appearance:none;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:185px;
+  border:1px solid #8e763c;
+  border-radius:18px;
+  background:linear-gradient(160deg,#133b2b,#050a08 72%);
+  color:white;
+  padding:23px 15px;
+  font-family:inherit;
+  cursor:pointer;
+  transition:all .25s ease;
+  position:relative;
+  overflow:hidden;
+}
 
-    padding:26px;
+.feature:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,#00ed8820,transparent);
+  transform:translateX(-100%);
+  transition:.5s;
+}
 
+.feature:hover:before,
+.feature:focus-visible:before{
+  transform:translateX(100%);
+}
+
+.feature:hover,
+.feature:focus-visible,
+.feature.active{
+  transform:translateY(-4px);
+  border-color:var(--green);
+  box-shadow:0 0 28px #00e68a80;
+  animation:flash .8s ease-in-out;
+}
+
+@keyframes flash{
+  0%,100%{box-shadow:0 0 10px #00ea8850}
+  50%{box-shadow:0 0 38px #00ea88}
 }
 
 .feature-icon{
-
-    width:52px;
-
-    height:52px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:15px;
-
-    margin-bottom:17px;
-
-    font-size:23px;
-
-    color:#111;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        var(--dorado),
-        #fff1ae
-    );
-
+  color:var(--gold);
+  font-size:39px;
+  margin-bottom:15px;
 }
 
-.feature h3{
-
-    margin-bottom:9px;
-
-    font-size:18px;
-
+.feature-title{
+  font-size:17px;
+  font-weight:900;
+  text-align:center;
 }
 
-.feature p{
-
-    font-size:14px;
-
-    line-height:1.6;
-
-    color:#9fb0a5;
-
+.hint{
+  color:#99b9a7;
+  font-size:11px;
+  margin-top:10px;
 }
 
-.details{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:15px;
-
-    margin-top:15px;
-
+.answer{
+  display:grid;
+  grid-template-rows:0fr;
+  opacity:0;
+  width:100%;
+  transition:grid-template-rows .3s,opacity .3s;
 }
 
-.detail{
-
-    padding:28px;
-
+.answer-inner{
+  overflow:hidden;
+  text-align:center;
+  color:#caffdf;
+  font-size:13px;
+  line-height:1.6;
 }
 
-.detail-symbol{
-
-    font-size:42px;
-
-    margin-bottom:15px;
-
+.feature.active .answer{
+  grid-template-rows:1fr;
+  opacity:1;
+  margin-top:14px;
 }
 
-.detail h3{
-
-    font-size:20px;
-
-    margin-bottom:8px;
-
+.feature.active .hint{
+  display:none;
 }
 
-.detail p{
-
-    color:#a8b7ae;
-
-    line-height:1.65;
-
-    font-size:14px;
-
+.cta-section{
+  padding:20px 0 65px;
 }
 
-.final{
-
-    text-align:center;
-
-    margin:
-    35px 0
-    80px;
-
-    padding:
-    45px
-    25px;
-
+.cta-box{
+  border:2px solid #b59649;
+  background:
+    radial-gradient(ellipse at top,#175b3c,#06120c 65%);
+  border-radius:25px;
+  text-align:center;
+  padding:42px 30px;
+  box-shadow:0 0 35px #00935542;
 }
 
-.final h2{
-
-    font-size:
-    clamp(
-        32px,
-        6vw,
-        50px
-    );
-
-    margin-bottom:14px;
-
+.cta-box h2{
+  font-size:clamp(25px,5vw,44px);
+  color:var(--gold);
+  margin:0 0 15px;
 }
 
-.final p{
-
-    max-width:650px;
-
-    margin:
-    0 auto
-    22px;
-
-    color:#adbbb2;
-
-    line-height:1.6;
-
+.cta-box p{
+  line-height:1.7;
+  color:#d7e6df;
 }
 
-.final .cta{
-
-    max-width:600px;
-
-    margin:
-    0 auto;
-
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  max-width:440px;
+  margin:25px auto 0;
 }
 
-.whatsapp-float{
+.contact-form input{
+  width:100%;
+  padding:19px 22px;
+  border-radius:12px;
+  border:1px solid #b49753;
+  outline:none;
+  font-family:inherit;
+  font-size:16px;
+  color:white;
+  background:#040d09;
+}
 
-    position:fixed;
+.contact-form input:focus{
+  border-color:var(--green);
+  box-shadow:0 0 15px #00f29060;
+}
 
-    right:18px;
+.contact-form .primary-btn{
+  width:100%;
+}
 
-    bottom:18px;
+.whatsapp-floating{
+  position:fixed;
+  left:19px;
+  bottom:23px;
+  width:65px;
+  height:65px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#19bd64;
+  border:2px solid white;
+  border-radius:50%;
+  box-shadow:0 0 23px #00db79;
+  z-index:100;
+  text-decoration:none;
+  transition:.3s;
+  animation:float 2.5s ease-in-out infinite;
+}
 
-    z-index:100;
+.whatsapp-floating:hover{
+  transform:scale(1.12);
+  box-shadow:0 0 40px #00fa80;
+}
 
-    display:flex;
+.whatsapp-floating svg{
+  width:35px;
+  height:35px;
+  fill:white;
+}
 
-    align-items:center;
-
-    justify-content:center;
-
-    gap:8px;
-
-    padding:
-    13px
-    18px;
-
-    border-radius:50px;
-
-    text-decoration:none;
-
-    color:#06150c;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #1edb76,
-        #61f3a2
-    );
-
-    font-weight:900;
-
-    box-shadow:
-    0 10px
-    30px
-    rgba(0,220,115,.30);
-
+@keyframes float{
+  0%,100%{translate:0 0}
+  50%{translate:0 -6px}
 }
 
 footer{
-
-    text-align:center;
-
-    padding:
-    35px
-    20px;
-
-    border-top:
-    1px solid
-    rgba(255,255,255,.08);
-
-    background:
-    rgba(0,0,0,.25);
-
+  background:#020503;
+  border-top:1px solid #264d37;
+  padding:29px 15px 35px;
+  text-align:center;
+  font-size:12px;
+  color:#93a79a;
+  line-height:1.8;
 }
 
 footer strong{
-
-    display:block;
-
-    font-size:18px;
-
-    margin-bottom:8px;
-
-}
-
-footer small{
-
-    color:#829087;
-
-    line-height:1.6;
-
+  color:var(--gold);
 }
 
 @media(max-width:800px){
-
-    .features{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .details{
-
-        grid-template-columns:1fr;
-
-    }
-
+  .platforms{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .features{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
-@media(max-width:550px){
-
-    .container{
-
-        width:94%;
-
-    }
-
-    .logo{
-
-        width:65px;
-
-        height:65px;
-
-        font-size:21px;
-
-    }
-
-    .hero{
-
-        padding:
-        40px
-        16px;
-
-        border-radius:20px;
-
-    }
-
-    .hero h1{
-
-        font-size:
-        clamp(
-            40px,
-            12vw,
-            56px
-        );
-
-        letter-spacing:-2px;
-
-    }
-
-    .form-box{
-
-        padding:
-        18px
-        14px;
-
-    }
-
-    .feature{
-
-        padding:22px;
-
-    }
-
-    .detail{
-
-        padding:23px;
-
-    }
-
-    .whatsapp-float{
-
-        width:58px;
-
-        height:58px;
-
-        padding:0;
-
-        font-size:0;
-
-    }
-
-    .whatsapp-float span{
-
-        font-size:24px;
-
-    }
-
+@media(max-width:500px){
+  header{padding-top:25px}
+  .hero{padding-bottom:35px}
+  h1{font-size:49px}
+  .platforms{gap:10px}
+  .platform{
+    font-size:16px;
+    padding:21px 7px;
+  }
+  .features{
+    grid-template-columns:1fr;
+    gap:13px;
+  }
+  .feature{min-height:145px}
+  .cta-box{padding:35px 18px}
+  .whatsapp-floating{
+    width:57px;
+    height:57px;
+    left:13px;
+    bottom:16px;
+  }
 }
 
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    animation:none!important;
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+}
 </style>
-
 </head>
-
 
 <body>
 
-
-<noscript>
-
-<img
-height="1"
-width="1"
-style="display:none"
-src="https://www.facebook.com/tr?id=1381019173497631&ev=PageView&noscript=1"
-alt="">
-
-</noscript>
-
-
 <header>
-
-<div class="logo-box">
-
-    <div class="logo">
-        MyB
-    </div>
-
-    <div class="logo-name">
-        GRUPO MyB
-    </div>
-
-    <div class="logo-subtitle">
-        PLATAFORMAS ONLINE
-    </div>
-
-</div>
-
+  <div class="logo" aria-label="BN Fichas">
+    <div class="crown">♛</div>
+    <div class="logo-bn">BN</div>
+    <div class="logo-name">Fichas</div>
+  </div>
 </header>
-
 
 <main class="container">
 
+<section class="hero">
+  <div class="tag">PLATAFORMAS PARA INDEPENDIENTES</div>
 
-<section class="hero card">
+  <h1>
+    BUSCAMOS
+    <span>CAJEROS Y</span>
+    <span>ADMINISTRADORES</span>
+    <strong>INDEPENDIENTES</strong>
+  </h1>
 
+  <p class="intro">
+    Descubrí nuestras plataformas, conocé sus
+    características y consultanos cómo trabajar
+    de forma independiente con BN Fichas.
+  </p>
 
-<div class="badge">
-
-INCORPORACIÓN ABIERTA
-
-</div>
-
-
-<h1>
-
-Buscamos
-<span>cajeros/as</span>
-para plataformas online
-
-</h1>
-
-
-<p class="hero-text">
-
-Estamos incorporando personas
-para tareas de atención y gestión
-de usuarios dentro de plataformas online.
-
-Conocé cómo funciona,
-los requisitos
-y la modalidad de trabajo.
-
-</p>
-
-
-<div class="tags">
-
-<span>♠ Plataformas online</span>
-
-<span>📱 Gestión digital</span>
-
-<span>💬 Atención a usuarios</span>
-
-<span>↕ Cargas y retiros</span>
-
-</div>
-
-
-<div class="form-box">
-
-
-<label for="nombre">
-
-¿Cómo te llamás?
-
-</label>
-
-
-<input
-type="text"
-id="nombre"
-placeholder="Escribí tu nombre"
-maxlength="40"
-autocomplete="name">
-
-
-<button
-type="button"
-class="cta"
-onclick="enviarWhatsApp()">
-
-📲 QUIERO INFORMACIÓN
-
-</button>
-
-
-<p class="small-info">
-
-Al tocar el botón
-se abrirá WhatsApp
-con un mensaje preparado.
-
-</p>
-
-
-</div>
-
-
+  <a href="#contacto" class="primary-btn">
+    ✦ QUIERO SER INDEPENDIENTE
+  </a>
 </section>
 
-
-<section class="section">
-
-
-<div class="section-title">
-
-<small>
-GRUPO MyB
-</small>
-
-<h2>
-¿En qué consiste?
-</h2>
-
-</div>
-
-
-<div class="features">
-
-
-<div class="feature card">
-
-<div class="feature-icon">
-💬
-</div>
-
-<h3>
-Atención a usuarios
-</h3>
-
-<p>
-
-Comunicación,
-consultas
-y seguimiento de usuarios.
-
-</p>
-
-</div>
-
-
-<div class="feature card">
-
-<div class="feature-icon">
-↕
-</div>
-
-<h3>
-Cargas y retiros
-</h3>
-
-<p>
-
-Gestión operativa
-dentro de las plataformas online.
-
-</p>
-
-</div>
-
-
-<div class="feature card">
-
-<div class="feature-icon">
-⌂
-</div>
-
-<h3>
-Trabajo remoto
-</h3>
-
-<p>
-
-La actividad puede gestionarse
-principalmente desde celular
-o computadora.
-
-</p>
-
-</div>
-
-
-</div>
-
-
-<div class="details">
-
-
-<div class="detail card">
-
-<div class="detail-symbol">
-🎓
-</div>
-
-<h3>
-Con o sin experiencia
-</h3>
-
-<p>
-
-Si ya conocés el rubro,
-podés consultar.
-
-Si todavía no tenés experiencia,
-te explicamos el funcionamiento.
-
-</p>
-
-</div>
-
-
-<div class="detail card">
-
-<div class="detail-symbol">
-%
-</div>
-
-<h3>
-Modalidad por comisión
-</h3>
-
-<p>
-
-La modalidad de ingreso
-es variable
-y depende de la actividad realizada.
-
-</p>
-
-</div>
-
-
-<div class="detail card">
-
-<div class="detail-symbol">
-🎧
-</div>
-
-<h3>
-Capacitación y soporte
-</h3>
-
-<p>
-
-Recibís información
-sobre el funcionamiento
-y acompañamiento del equipo.
-
-</p>
-
-</div>
-
-
-<div class="detail card">
-
-<div class="detail-symbol">
-♠ ♦
-</div>
-
-<h3>
-Entretenimiento online
-</h3>
-
-<p>
-
-Actividad relacionada
-con plataformas digitales
-de entretenimiento.
-
-</p>
-
-</div>
-
-
-</div>
-
-
+<section>
+  <h2 class="section-title">Nuestras plataformas</h2>
+
+  <div class="platforms">
+    <div class="platform">
+      <span>♛</span>
+      Ganamos Net
+    </div>
+
+    <div class="platform">
+      <span>✦</span>
+      Bet30 AI
+    </div>
+
+    <div class="platform">
+      <span>🍋</span>
+      Lemon
+    </div>
+
+    <div class="platform">
+      <span>▣</span>
+      Multipanel
+    </div>
+  </div>
 </section>
 
+<section>
+  <h2 class="section-title">
+    Conocé nuestros beneficios
+  </h2>
 
-<section class="final card">
+  <p style="text-align:center;color:#a8c4b4;margin-bottom:28px">
+    Tocá cada tarjeta para descubrir más información.
+  </p>
 
-<div class="badge">
+  <div class="features">
 
-GRUPO MyB
+    <button class="feature"
+      type="button" aria-expanded="false">
+      <span class="feature-icon">⚙</span>
+      <span class="feature-title">RTP REGULABLE</span>
+      <span class="hint">✦ Tocá para descubrir</span>
+      <span class="answer">
+        <span class="answer-inner">
+          Las plataformas que disponen de esta
+          función permiten modificar la configuración
+          del RTP según las opciones habilitadas.
+          Consultanos los detalles.
+        </span>
+      </span>
+    </button>
 
-</div>
+    <button class="feature"
+      type="button" aria-expanded="false">
+      <span class="feature-icon">✦</span>
+      <span class="feature-title">EXCELENTES PRECIOS</span>
+      <span class="hint">✦ Tocá para descubrir</span>
+      <span class="answer">
+        <span class="answer-inner">
+          Tenemos precios muy competitivos.
+          Consultanos nuestra lista de precios
+          y las opciones disponibles.
+        </span>
+      </span>
+    </button>
 
+    <button class="feature"
+      type="button" aria-expanded="false">
+      <span class="feature-icon">♛</span>
+      <span class="feature-title">IDEAL PARA INDEPENDIENTES</span>
+      <span class="hint">✦ Tocá para descubrir</span>
+      <span class="answer">
+        <span class="answer-inner">
+          ¿Estás cansado de depender de tus
+          administradores? Conocé nuestras opciones
+          para trabajar de forma independiente.
+        </span>
+      </span>
+    </button>
 
-<h2>
+    <button class="feature"
+      type="button" aria-expanded="false">
+      <span class="feature-icon">📣</span>
+      <span class="feature-title">MATERIAL PUBLICITARIO</span>
+      <span class="hint">✦ Tocá para descubrir</span>
+      <span class="answer">
+        <span class="answer-inner">
+          Brindamos un canal de imágenes con
+          material publicitario para compartir
+          en redes sociales y estados de WhatsApp.
+        </span>
+      </span>
+    </button>
 
-¿Querés conocer más?
+    <button class="feature"
+      type="button" aria-expanded="false">
+      <span class="feature-icon">🎧</span>
+      <span class="feature-title">ATENCIÓN Y SOPORTE</span>
+      <span class="hint">✦ Tocá para descubrir</span>
+      <span class="answer">
+        <span class="answer-inner">
+          Todas las plataformas cuentan con
+          su soporte técnico para consultas
+          y asistencia.
+        </span>
+      </span>
+    </button>
 
-</h2>
+    <button class="feature"
+      type="button" aria-expanded="false">
+      <span class="feature-icon">💬</span>
+      <span class="feature-title">INFORMACIÓN PERSONALIZADA</span>
+      <span class="hint">✦ Tocá para descubrir</span>
+      <span class="answer">
+        <span class="answer-inner">
+          Tu consulta no molesta.
+          Escribinos para conocer las condiciones
+          y las plataformas disponibles.
+        </span>
+      </span>
+    </button>
 
-
-<p>
-
-Escribinos por WhatsApp
-para recibir información
-sobre tareas,
-modalidad
-y requisitos.
-
-</p>
-
-
-<button
-type="button"
-class="cta"
-onclick="enviarWhatsApp()">
-
-📲 PEDIR INFORMACIÓN POR WHATSAPP
-
-</button>
-
-
+  </div>
 </section>
 
+<section class="cta-section" id="contacto">
+  <div class="cta-box">
+
+    <h2>¿QUERÉS SER INDEPENDIENTE?</h2>
+
+    <p>
+      Estás a un mensaje de conocer nuestras opciones.
+      Ingresá tu nombre y comunicate directamente
+      con BN Fichas por WhatsApp.
+    </p>
+
+    <form id="contactForm" class="contact-form">
+      <input
+        type="text"
+        id="nombre"
+        placeholder="Escribí tu nombre..."
+        maxlength="70"
+        autocomplete="given-name"
+        required
+      >
+
+      <button class="primary-btn" type="submit">
+        💬 ENVIAR CONSULTA POR WHATSAPP
+      </button>
+    </form>
+
+    <p style="font-size:12px;color:#a5bfb0">
+      Se abrirá WhatsApp con tu mensaje preparado.
+      Solo tendrás que enviarlo.
+    </p>
+
+  </div>
+</section>
 
 </main>
 
-
+<!-- WHATSAPP FLOTANTE -->
 <a
-href="#"
-class="whatsapp-float"
-onclick="enviarWhatsAppFlotante(event)"
-aria-label="Contactar por WhatsApp">
-
-<span>
-☎
-</span>
-
-WhatsApp
-
+  class="whatsapp-floating"
+  id="floatingWhatsApp"
+  href="https://wa.me/5492664367922?text=Quiero%20ser%20independiente%2C%20%C2%BFme%20pas%C3%A1s%20info%3F"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Consultar por WhatsApp"
+  title="Hablá con BN Fichas"
+>
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16 .8A15.1 15.1 0 0 0 2.9 23.5L.8 31l7.7-2A15.2 15.2 0 1 0 16 .8zm0 27.7a12.4 12.4 0 0 1-6.3-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.5 12.5 0 1 1 16 28.5zm6.8-9.3c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.4-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.3 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.5 1.5 3.8c.2.2 2.5 3.9 6.1 5.4.9.4 1.6.6 2.1.8.9.3 1.7.2 2.4.2.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5z"/>
+  </svg>
 </a>
 
-
 <footer>
-
-<strong>
-GRUPO MyB
-</strong>
-
-<small>
-
-Información para personas
-interesadas en conocer
-nuestra modalidad de trabajo
-con plataformas online.
-
-</small>
-
+  <strong>BN FICHAS</strong>
+  <p>
+    Información para cajeros y administradores independientes.
+  </p>
+  <p>
+    Exclusivo para mayores de 18 años.
+    Sujeto a las autorizaciones y normativas aplicables.
+  </p>
+  © BN Fichas
 </footer>
 
-
 <script>
+const WHATSAPP_NUMBER = "5492664367922";
 
+function whatsappLink(nombre = "") {
+  const texto = nombre
+    ? `Hola, soy ${nombre}. Quiero ser independiente, ¿me pasás info?`
+    : "Quiero ser independiente, ¿me pasás info?";
 
-/*
-=========================================
-WHATSAPP
-
-NÚMERO:
-2664651893
-
-FORMATO INTERNACIONAL:
-5492664651893
-=========================================
-*/
-
-
-const WHATSAPP_NUMBER = "5492664651893";
-
-
-function registrarClickWhatsApp(){
-
-    if(
-        typeof fbq === "function"
-    ){
-
-        fbq(
-            "track",
-            "Contact"
-        );
-
-        fbq(
-            "trackCustom",
-            "ClickWhatsApp"
-        );
-
-    }
-
+  return "https://wa.me/" + WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(texto);
 }
 
-
-function crearWhatsAppUrl(
-    mensaje
-){
-
-    return (
-
-        "https://wa.me/" +
-
-        WHATSAPP_NUMBER +
-
-        "?text=" +
-
-        encodeURIComponent(
-            mensaje
-        )
-
-    );
-
+function trackContact() {
+  if (typeof fbq === "function") {
+    fbq("track", "Contact");
+  }
 }
 
+// Tarjetas interactivas
+document.querySelectorAll(".feature").forEach(card => {
+  card.addEventListener("click", () => {
+    const abierta = card.classList.contains("active");
 
-function enviarWhatsApp(){
+    document.querySelectorAll(".feature").forEach(c => {
+      c.classList.remove("active");
+      c.setAttribute("aria-expanded", "false");
+    });
 
-    const campoNombre =
-    document.getElementById(
-        "nombre"
-    );
-
-
-    const nombre =
-    campoNombre
-    ?
-    campoNombre.value.trim()
-    :
-    "";
-
-
-    let mensaje;
-
-
-    if(nombre){
-
-        mensaje =
-
-        "Hola, soy " +
-
-        nombre +
-
-        ". Quiero información para ser cajero/a de Grupo MyB.";
-
+    if (!abierta) {
+      card.classList.add("active");
+      card.setAttribute("aria-expanded", "true");
     }
+  });
+});
 
-    else{
-
-        mensaje =
-
-        "Hola, quiero información para ser cajero/a de Grupo MyB.";
-
-    }
-
-
-    registrarClickWhatsApp();
-
-
-    const url =
-    crearWhatsAppUrl(
-        mensaje
-    );
-
-
-    window.open(
-        url,
-        "_blank"
-    );
-
-}
-
-
-function enviarWhatsAppFlotante(
-    event
-){
-
+// Formulario con nombre
+document.getElementById("contactForm")
+  .addEventListener("submit", function(event) {
     event.preventDefault();
 
+    const nombre = document
+      .getElementById("nombre")
+      .value.trim();
 
-    const mensaje =
+    if (!nombre) {
+      document.getElementById("nombre").focus();
+      return;
+    }
 
-    "Hola, quiero información para ser cajero/a de Grupo MyB.";
+    trackContact();
 
+    const enlace = whatsappLink(nombre);
+    const ventana = window.open(enlace, "_blank", "noopener");
 
-    registrarClickWhatsApp();
+    if (!ventana) {
+      window.location.href = enlace;
+    }
+  });
 
-
-    const url =
-    crearWhatsAppUrl(
-        mensaje
-    );
-
-
-    window.open(
-        url,
-        "_blank"
-    );
-
-}
-
-
+// Botón WhatsApp flotante
+document.getElementById("floatingWhatsApp")
+  .addEventListener("click", function() {
+    trackContact();
+  });
 </script>
 
-
 </body>
-
 </html>
